@@ -1,7 +1,7 @@
 const express = require('express');
-import passport from 'passport';
-import FacebookStrategy from 'passport-facebook';
-import GoogleStrategy from 'passport-google-oauth20';
+const passport= require('passport');
+const FacebookStrategy= require('passport-facebook');
+const GoogleStrategy=require('passport-google-oauth20');
 // Import Facebook and Google OAuth apps configs
 import { facebook, google } from './config';
 
