@@ -22,13 +22,13 @@ const transformGoogleProfile = (profile) => ({
 // Register Facebook Passport strategy
 passport.use(new FacebookStrategy(facebook,
   async (accessToken, refreshToken, profile, done)
-    => done(null, transformFacebookProfile(profile.json))
+    // => done(null, transformFacebookProfile(profile._json))
 ));
 
 // Register Google Passport strategy
 passport.use(new GoogleStrategy(google,
   async (accessToken, refreshToken, profile, done)
-    => done(null, transformGoogleProfile(profile._json))
+    // => done(null, transformGoogleProfile(profile._json))
 ));
 
 // Serialize user into the sessions
