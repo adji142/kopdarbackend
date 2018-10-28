@@ -1,4 +1,3 @@
-// import express from 'express';
 const express = require('express');
 import passport from 'passport';
 import FacebookStrategy from 'passport-facebook';
