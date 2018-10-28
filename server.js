@@ -1,4 +1,5 @@
-import express from 'express';
+// import express from 'express';
+const express = require('express');
 import passport from 'passport';
 import FacebookStrategy from 'passport-facebook';
 import GoogleStrategy from 'passport-google-oauth20';
