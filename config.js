@@ -9,7 +9,8 @@ const google = {
     clientSecret: 'ig1SG1M2PwJPRD_SIPJiCecj',
     callbackURL: 'https://backendkopdar.herokuapp.com/auth/google/callback',
   };
-export {google};
+  module.exports = facebook;
+  module.exports = google;
 // const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 // module.exports = (passport) => {
 //     passport.serializeUser((user, done) => {
