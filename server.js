@@ -26,8 +26,7 @@ passport.use(new FacebookStrategy(facebook,
 
 // Register Google Passport strategy
 passport.use(new GoogleStrategy(google,
-  async (accessToken, refreshToken, profile, done)
-    => done(null, transformGoogleProfile(profile._json))
+  async (accessToken, refreshToken, profile, done)=> done(null, transformGoogleProfile(profile._json))
 ));
 
 // Serialize user into the sessions
