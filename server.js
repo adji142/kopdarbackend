@@ -21,8 +21,7 @@ const transformGoogleProfile = (profile) => ({
 
 // Register Facebook Passport strategy
 passport.use(new FacebookStrategy(facebook,
-  async (accessToken, refreshToken, profile, done)
-    => done(null, transformFacebookProfile(profile._json))
+  async (accessToken, refreshToken, profile, done)=> done(null, transformFacebookProfile(profile._json))
 ));
 
 // Register Google Passport strategy
