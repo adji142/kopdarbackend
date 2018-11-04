@@ -56,7 +56,7 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }))
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/auth/google' }),
   (req, res) => res.redirect('OAuthLogin://login?user=' + JSON.stringify(req.user)));
-
+//
 // Launch the server on the port 3000
 const server = app.listen(process.env.port || 5000, () => {
   const { address, port } = server.address();
