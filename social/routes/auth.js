@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passportFacebook = require('../auth/facebook');
 // var passportTwitter = require('../auth/twitter');
-// var passportGoogle = require('../auth/google');
+var passportGoogle = require('../auth/google');
 // var passportGitHub = require('../auth/github');
 
 /* LOGIN ROUTER */
@@ -38,15 +38,15 @@ function(req, res) {
 //   res.redirect('/');
 // });
 
-// /* GOOGLE ROUTER */
-// router.get('/google',
-// passportGoogle.authenticate('google', { scope: 'https://www.google.com/m8/feeds' }));
+/* GOOGLE ROUTER */
+router.get('/google',
+passportGoogle.authenticate('google', { scope: 'https://www.google.com/m8/feeds' }));
 
-// router.get('/google/callback',
-// passportGoogle.authenticate('google', { failureRedirect: '/login' }),
-// function(req, res) {
-//   res.redirect('/');
-// });
+router.get('/google/callback',
+passportGoogle.authenticate('google', { failureRedirect: '/login' }),
+function(req, res) {
+  res.redirect('/');
+});
 
 // /* GITHUB ROUTER */
 // router.get('/github',
