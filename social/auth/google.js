@@ -8,11 +8,12 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     console.log('Masuk test');
-    user.FindOrCreate({name: profile.displayName},{name: profile.displayName,userid: profile.id},
-      function(err,user){
-          if(err){return done(err);}
-          done(null,user);
-      });
+    // user.FindOrCreate({name: profile.displayName},{name: profile.displayName,userid: profile.id},
+    //   function(err,user){
+    //       if(err){return done(err);}
+    //       done(null,user);
+    //   });
+    done(null,user);
     console.log(profile.id);
   }
 ));
