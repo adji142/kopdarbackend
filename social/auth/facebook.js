@@ -7,11 +7,12 @@ passport.use(new facebookstrategy({
     callbackURL: "https://backendkopdar.herokuapp.com/auth/facebook/callback"
 },
 function(accessToken,refreshToken,profile,done){
-    user.FindOrCreate({name: profile.displayName},{name: profile.displayName,userid: profile.id},
-        function(err,user){
-            if(err){return done(err);}
-            done(null,user);
-        });
+    // user.FindOrCreate({name: profile.displayName},{name: profile.displayName,userid: profile.id},
+    //     function(err,user){
+    //         if(err){return done(err);}
+    //         done(null,user);
+    //     });
+    done(null,user);
 }
 ));
 
