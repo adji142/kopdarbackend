@@ -8,10 +8,12 @@ passport.use(new GoogleStrategy({
     callbackURL: "https://backendkopdar.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-      //  user.FindOrCreate({ userid: profile.id }, { name: profile.displayName,userid: profile.id }, function (err, user) {
-      //    return done(err, user);
-      //  });
-      console.log(profile.id);
+    user.FindOrCreate({name: profile.displayName},{name: profile.displayName,userid: profile.id},
+      function(err,user){
+          if(err){return done(err);}
+          done(null,user);
+      });
+    console.log(profile.id);
   }
 ));
 module.exports = passport;
