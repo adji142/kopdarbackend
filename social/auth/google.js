@@ -1,5 +1,4 @@
-var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var passport = require('passport'),GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var user = require('../models/User');
 
 passport.use(new GoogleStrategy({
@@ -8,6 +7,7 @@ passport.use(new GoogleStrategy({
     callbackURL: "https://backendkopdar.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
+    console.log('Masuk test');
     user.FindOrCreate({name: profile.displayName},{name: profile.displayName,userid: profile.id},
       function(err,user){
           if(err){return done(err);}
