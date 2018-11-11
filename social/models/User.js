@@ -9,4 +9,4 @@ var userschema = new mongosee.Schema({
 userschema.statics.FindOrCreate = require('find-or-create');
 
 
-module.exports = mongosee.model('User',userschema);
+module.exports = mongosee.model('users',userschema);
